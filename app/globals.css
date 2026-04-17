@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  background-color: #fafaf5;
+  color: #30332e;
+}
+
+body {
+  font-family: var(--font-inter), Inter, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .font-headline {
+  font-family: var(--font-manrope), Manrope, system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+@layer components {
+  .glass-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .ai-pulse-bg {
+    background: linear-gradient(45deg, #47664a, #4a50c8);
+  }
+
+  .ai-pulse-text {
+    background: linear-gradient(45deg, #47664a, #4a50c8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .ambient-shadow {
+    box-shadow: 0 12px 40px rgba(48, 51, 46, 0.06);
+  }
+
+  .ai-glow {
+    position: relative;
+  }
+
+  .ai-glow::before {
+    content: "";
+    position: absolute;
+    inset: -30px;
+    background: radial-gradient(circle at top right, rgba(175, 178, 255, 0.25), transparent 60%);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .card {
+    @apply bg-surface-container-lowest rounded-xxl ambient-shadow;
+  }
+
+  .scrollbar-subtle::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .scrollbar-subtle::-webkit-scrollbar-thumb {
+    background: rgba(92, 96, 90, 0.25);
+    border-radius: 9999px;
+  }
+  .scrollbar-subtle::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+.pulse-dot {
+  position: relative;
+  display: inline-flex;
+}
+
+.pulse-dot::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 9999px;
+  background: currentColor;
+  opacity: 0.3;
+  animation: ai-pulse 2s ease-in-out infinite;
+}
