@@ -78,7 +78,7 @@ export function ChatPanel({ tenantId }: { tenantId: string | null }) {
 
       <div
         ref={scrollRef}
-        className="scrollbar-subtle flex-1 space-y-4 overflow-y-auto bg-surface-container-low/40 px-6 py-4"
+        className="scrollbar-subtle min-h-0 flex-1 space-y-4 overflow-y-auto bg-surface-container-low/40 px-6 py-4"
       >
         {thread.length === 0 ? (
           <div className="flex h-full flex-col items-center justify-center text-center text-on-surface-variant">

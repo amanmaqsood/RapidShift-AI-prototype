@@ -115,14 +115,16 @@ export default function AutomationsPage() {
                   aria-checked={enabled}
                   onClick={() => setState((s) => ({ ...s, [a.id]: !s[a.id] }))}
                   className={cn(
-                    "relative h-6 w-11 shrink-0 rounded-full transition-colors",
-                    enabled ? "ai-pulse-bg" : "bg-surface-container-high",
+                    "relative inline-flex h-6 w-11 shrink-0 items-center rounded-full border transition-colors",
+                    enabled
+                      ? "border-primary/30 bg-primary"
+                      : "border-outline-variant bg-surface-container-high",
                   )}
                 >
                   <span
                     className={cn(
-                      "absolute top-0.5 h-5 w-5 rounded-full bg-white shadow transition-transform",
-                      enabled ? "translate-x-5" : "translate-x-0.5",
+                      "inline-block h-4 w-4 transform rounded-full bg-white shadow-sm ring-1 ring-black/5 transition-transform",
+                      enabled ? "translate-x-6" : "translate-x-1",
                     )}
                   />
                 </button>

@@ -48,12 +48,12 @@ export default function RentPage() {
   ];
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex h-[calc(100dvh-7rem)] min-h-[560px] flex-col gap-4">
       <header>
         <p className="text-xs font-semibold uppercase tracking-widest text-tertiary">
           Rent Collection · AI Auto-Followup
         </p>
-        <h1 className="mt-2 font-headline text-3xl font-bold text-on-surface">
+        <h1 className="mt-2 font-headline text-2xl font-bold text-on-surface lg:text-3xl">
           Monitoring <span className="text-primary">{unitsTracked}</span> units.
           AI is handling{" "}
           <span className="ai-pulse-text">
@@ -63,27 +63,27 @@ export default function RentPage() {
         </h1>
       </header>
 
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+      <div className="grid shrink-0 grid-cols-2 gap-3 md:grid-cols-4">
         {kpis.map(({ icon: Icon, label, value, accent }) => (
-          <div key={label} className="card p-5">
+          <div key={label} className="card p-4">
             <div className="flex items-start justify-between">
               <p className="text-[11px] font-semibold uppercase tracking-wider text-on-surface-variant">
                 {label}
               </p>
               <Icon className={`h-4 w-4 ${accent}`} />
             </div>
-            <p className={`mt-2 font-headline text-2xl font-bold ${accent}`}>
+            <p className={`mt-1.5 font-headline text-xl font-bold ${accent}`}>
               {value}
             </p>
           </div>
         ))}
       </div>
 
-      <div className="card grid h-[calc(100vh-18rem)] min-h-[600px] grid-cols-[360px_1fr] overflow-hidden">
-        <div className="border-0 bg-surface-container-low/50">
+      <div className="card grid min-h-0 flex-1 grid-cols-[320px_1fr] overflow-hidden lg:grid-cols-[360px_1fr]">
+        <div className="min-h-0 border-0 bg-surface-container-low/50">
           <TenantList selectedId={selected} onSelect={setSelected} />
         </div>
-        <div className="bg-surface-container-lowest">
+        <div className="min-h-0 bg-surface-container-lowest">
           <ChatPanel tenantId={selected} />
         </div>
       </div>

@@ -46,7 +46,7 @@ export function TenantList({
           {rows.length} active
         </span>
       </div>
-      <div className="scrollbar-subtle flex-1 overflow-y-auto">
+      <div className="scrollbar-subtle min-h-0 flex-1 overflow-y-auto">
         {rows.map(({ tenant, record, aiHandled }) => {
           const status = record ? statusStyles[record.status] : null;
           const isSelected = selectedId === tenant.id;
